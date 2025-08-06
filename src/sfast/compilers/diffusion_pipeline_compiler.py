@@ -193,7 +193,7 @@ def compile_vae(m, config):
 def _modify_model(
     m,
     enable_cnn_optimization=True,
-    enable_fused_linear_geglu=True,
+    enable_fused_linear_geglu=False,
     prefer_lowp_gemm=True,
     enable_triton=False,
     enable_triton_reshape=False,
@@ -257,7 +257,7 @@ def _ts_compiler(
     inputs,
     modify_model_fn=None,
     freeze=False,
-    preserve_parameters=False,
+    preserve_parameters=True,
 ):
     with torch.jit.optimized_execution(True):
         if freeze and not getattr(m, 'training', False):

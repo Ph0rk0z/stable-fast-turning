@@ -54,7 +54,7 @@ def better_freeze(script_module, *args, **kwargs):
             mod,
             preserved_attrs: Optional[List[str]] = None,
             optimize_numerics: bool = True,
-            preserve_parameters: bool = False,
+            preserve_parameters: bool = True,
         ):
             if not isinstance(mod, ScriptModule):
                 raise RuntimeError(

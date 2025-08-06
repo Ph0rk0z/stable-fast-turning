@@ -134,6 +134,7 @@ def get_extensions():
                 "2",
                 "--ptxas-options=-v",
             ]
+        
         if platform.system() == "Windows":
             extra_compile_args["nvcc"] += [
                 "-Xcompiler",
